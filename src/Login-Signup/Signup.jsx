@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import './Signup.css';
-import { Link, Route, useNavigate, Navigate} from 'react-router-dom';
+import { Link, Route, useNavigate} from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import validation from './LoginValidation';
-// import Login from './Login-Signup/Login';
 
 
 export const Signup = () => {
@@ -15,7 +14,7 @@ export const Signup = () => {
         password: ''
     });
     const [errors, setErrors] = useState({});
-
+    const Navigate = useNavigate();
     const handleInput = (event) => {
         setValues(prev => ({ ...prev, [event.target.name]: event.target.value })); 
     };
@@ -35,7 +34,7 @@ export const Signup = () => {
                 body: JSON.stringify(values)
             });
             if (response.ok) {
-                return <Navigate to="/login" />;
+                Navigate("/login");
             } else {
                 console.error("Error:", "Signup failed");
             }
@@ -68,7 +67,7 @@ export const Signup = () => {
                     <button type='submit'>Register</button>
                     <div className='login-link'>
                         <p>Already have an account?{' '}
-                            <Link to="/login" className="link">Login</Link>
+                            <a><Link to="/login" className="link">Login</Link></a>
                         </p>
                     </div>
                 </form>

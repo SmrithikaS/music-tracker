@@ -4,10 +4,11 @@ import homebg from '../images/home.jpg'
 import { useNavigate } from "react-router-dom"
 
 const Intropg = () => {
+  const navigate = useNavigate() 
   const goToLogin = () =>{
     navigate("/login");
   }
-    const navigate = useNavigate() 
+    
   return (
     <div className='intro'>
       <div className='intro-text'>

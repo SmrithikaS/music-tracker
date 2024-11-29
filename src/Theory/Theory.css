@@ -1,0 +1,33 @@
+.theory {
+  padding: 60px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px; 
+  justify-items: center; 
+  margin-top: 80px;
+}
+
+.grid-item {
+  cursor: pointer;
+  border: 8px solid black; 
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.grid-item:hover {
+  transform: scale(1.05); 
+}
+
+.grid-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 4px; 
+  object-fit: contain;
+  align-items: center;
+  padding: 30px;
+}
